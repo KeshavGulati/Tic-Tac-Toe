@@ -1,0 +1,303 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@700&display=swap');
+
+/* X => <i class="fa-sharp fa-solid fa-xmark"></i> */
+/* O => <i class="fa-sharp fa-solid fa-o"></i> */
+:root {
+  --light-blue: #31C3BD;
+  --light-blue-hover: #65E9E4;
+  --light-yellow: #F2B137;
+  --light-yellow-hover: #FFC860;
+  --dark-navy: #1A2A33;
+  --semi-dark-navy: #1F3641;
+  --silver: #A8BFC9;
+  --silver-hover: #D8E8ED;
+  
+  font-size: 16px;
+  --heading-l: 2.5rem;
+  --heading-m: 1.5rem;
+  --heading-s: 1.25rem;
+  --heading-xs: 1rem;
+
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+
+}
+
+/* Set core body defaults */
+body {
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+   scroll-behavior: auto;
+
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+
+  }
+
+
+
+}
+
+/* <--- Styling Start ---> */
+
+html {
+  height: 100%;
+
+}
+
+body {
+  overflow: hidden;
+  font-family: 'Outfit', sans-serif;
+  font-size: var(--heading-xs);
+  color: var(--almost-white);
+  background-color: var(--dark-navy);
+  height: 100%;
+
+}
+
+* {
+  text-transform: uppercase;
+  cursor: default;
+
+}
+
+a {
+  text-decoration: none;
+
+}
+
+a:hover {
+  cursor: pointer;
+
+}
+
+.main-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 52%;
+  width: 32%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+}
+
+.icon-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 3%;
+
+}
+
+.icon-div > .x-mark {
+  font-size: 2.5em;
+  margin: 0.25rem;
+  color: var(--light-blue);
+
+}
+
+.icon-div > .o-mark {
+  font-size: 2em;
+  margin: 0.25rem;
+  color: var(--light-yellow);
+
+}
+
+.choice-div {
+  background: var(--semi-dark-navy);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  height: 43.5%;
+  width: 100%;
+  margin: auto;
+  border-radius: 10px;
+  box-shadow: 0 7px #142129;
+
+}
+
+.pick-text {
+  color: var(--silver);
+
+}
+
+.choice-div__icon-div {
+  background: var(--dark-navy);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 86%;
+  height: 35%;
+  border-radius: 10px;
+
+}
+
+.icon-div__icon-div {
+  width: 48%;
+  height: 80%;
+  background: transparent;
+  color: var(--silver);
+  text-align: center;
+  font-size: 2em;
+  border-radius: 10px;
+  transition: linear 0.3s;
+  z-index: 100;
+
+}
+
+.icon-div__icon-div:hover,
+.icon-div__icon-div > *:hover {
+  cursor: pointer;
+
+}
+
+.icon-bg-div {
+  position: absolute;
+  left: 50%;
+  background: var(--silver);
+  border-radius: 10px;
+  z-index: 99;
+  transition: transform 0.3s;
+
+}
+
+.active {
+  color: var(--dark-navy);
+
+}
+
+.remember-text {
+  color: var(--silver);
+  opacity: 50%;
+
+}
+
+.new-game-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 32.69%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+
+}
+
+.new-game-cpu-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 40%;
+  font-size: var(--heading-s);
+  color: var(--dark-navy);
+  background: var(--light-yellow);
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 5px #AD7E28;
+  transition: ease-in-out 0.3s;
+
+}
+
+.new-game-player-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  width: 100%;
+  height: 40%;
+  font-size: var(--heading-s);
+  color: var(--dark-navy);
+  background: var(--light-blue);
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 5px #269994;
+  transition: ease-in-out 0.3s;
+
+}
+
+.new-game-cpu-btn:hover {
+  background: var(--light-yellow-hover);
+
+}
+
+.new-game-player-btn:hover {
+  background: var(--light-blue-hover);
+
+}

@@ -1,0 +1,294 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@700&display=swap');
+
+/* X => <i class="fa-sharp fa-solid fa-xmark"></i> */
+/* O => <i class="fa-sharp fa-solid fa-o"></i> */
+:root {
+  --light-blue: #31C3BD;
+  --light-blue-hover: #65E9E4;
+  --light-yellow: #F2B137;
+  --light-yellow-hover: #FFC860;
+  --dark-navy: #1A2A33;
+  --semi-dark-navy: #1F3641;
+  --silver: #A8BFC9;
+  --silver-hover: #D8E8ED;
+  
+  font-size: 16px;
+  --heading-l: 2.5rem;
+  --heading-m: 1.5rem;
+  --heading-s: 1.25rem;
+  --heading-xs: 1rem;
+
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+
+}
+
+/* Set core body defaults */
+body {
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+   scroll-behavior: auto;
+
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+
+  }
+
+
+
+}
+
+/* <--- Utility Classes Start ---> */
+
+.none {
+    display: none;
+
+}
+
+/* <--- Styling Start ---> */
+
+html {
+  height: 100%;
+
+}
+
+body {
+  overflow: hidden;
+  font-family: 'Outfit', sans-serif;
+  font-size: var(--heading-xs);
+  color: var(--almost-white);
+  background-color: var(--dark-navy);
+  height: 100%;
+
+}
+
+* {
+  text-transform: uppercase;
+  cursor: default;
+
+}
+
+a {
+  text-decoration: none;
+
+}
+
+a:hover {
+  cursor: pointer;
+
+}
+
+.x-mark {
+    color: var(--light-blue);
+
+}
+
+.o-mark {
+    color: var(--light-yellow);
+
+}
+
+.main-container {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 31.94%;
+    height: 69.2%;
+    margin: auto;
+    display: grid;
+    grid-template: 0.5fr repeat(3, 1fr) 0.5fr / repeat(3, 1fr);
+
+}
+
+.icon-div {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+
+}
+
+.icon-div > .x-mark {
+    font-size: 2.5em;
+    margin: 0.25rem;
+
+}
+
+.icon-div > .o-mark {
+    font-size: 2em;
+
+}
+
+.turn-div {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--semi-dark-navy);
+    color: var(--silver);
+    height: 2.5em;
+    margin: 0 0.5em;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.turn-div > .x-mark {
+    font-size: 1.8em;
+    margin-right: 0.3em;
+
+}
+
+.turn-div > .o-mark {
+    font-size: 1.5em;
+    margin-right: 0.3em;
+
+}
+
+.restart-div {
+    display: flex;
+    align-items: center;
+    justify-content: right
+
+}
+
+.restart-div__arrow-div {
+    background: var(--silver);
+    width: 30%;
+    height: 60%;
+    padding: 0.5em;
+    border-radius: 5px;
+    margin-right: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px #505c61;
+
+}
+
+.box-div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 5em;
+    background: var(--semi-dark-navy);
+    box-shadow: 0 5px #132128;
+    border-radius: 10px;
+    margin: 0.5rem;
+
+}
+
+.you-score-div,
+.ties-div,
+.cpu-score-div {
+    margin: 0.5em;
+    padding: 0.5em;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.you-score-div > p,
+.ties-div > p,
+.cpu-score-div > p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.75rem;
+
+}
+
+.you-score-div > span,
+.ties-div > span,
+.cpu-score-div > span {
+    font-size: 1.5rem;
+
+} 
+
+.you-score-div {
+    background: var(--light-blue);
+    color: var(--dark-navy);
+
+}
+
+.ties-div {
+    background: var(--silver);
+    color: var(--dark-navy);
+
+}
+
+.cpu-score-div {
+    background: var(--light-yellow);
+    color: var(--dark-navy);
+
+}
