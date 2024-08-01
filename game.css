@@ -109,14 +109,18 @@ select {
 
 /* <--- Utility Classes Start ---> */
 
-.none {
-    display: none;
-
-}
+.none {display: none;}
+.bold {font-weight: bold;}
+.border-black {border: 2px solid black}
+.border-red {border: 2px solid red}
+.border-green {border: 2px solid green}
+.border-white {border: 2px solid white}
 
 /* <--- Styling Start ---> */
 
-html {
+html,
+body {
+  min-height: 100vh;
   height: 100%;
 
 }
@@ -137,35 +141,44 @@ body {
 
 }
 
-a {
-  text-decoration: none;
+a {text-decoration: none;}
+a:hover {cursor: pointer;}
+.x-mark {color: var(--light-blue);}
+.o-mark {color: var(--light-yellow);}
 
-}
-
-a:hover {
-  cursor: pointer;
-
-}
-
-.x-mark {
-    color: var(--light-blue);
-
-}
-
-.o-mark {
-    color: var(--light-yellow);
-
-}
+.icon-div {grid-area: icon-div;}
+.turn-div {grid-area: turn-div;}
+.restart-div {grid-area: restart-div;}
+.boxes-parent {grid-area: boxes-parent;}
+.you-score-div {grid-area: you-score-div;}
+.ties-div {grid-area: ties-div;}
+.cpu-score-div {grid-area: cpu-score-div;}
 
 .main-container {
-    position: relative;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 31.94%;
-    height: 69.2%;
-    margin: auto;
-    display: grid;
-    grid-template: 0.5fr repeat(3, 1fr) 0.5fr / repeat(3, 1fr);
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  /* width: 31.94%; */
+  width: 28%;
+  height: 69.2%;
+  margin: auto;
+  display: grid;
+  grid-template: 0.5fr repeat(3, 1fr) 5fr / repeat(3, 1fr);
+  grid-template-areas: 
+    "icon-div turn-div restart-div"
+    "icon-div turn-div restart-div"
+    "boxes-parent boxes-parent boxes-parent"
+    "boxes-parent boxes-parent boxes-parent"
+    "boxes-parent boxes-parent boxes-parent"
+    "boxes-parent boxes-parent boxes-parent"
+    "boxes-parent boxes-parent boxes-parent"
+    "you-score-div ties-div cpu-score-div"
+
+}
+
+.boxes-parent {
+  display: grid;
+  grid-template: repeat(3, 1fr) / repeat(3, 1fr);
 
 }
 
@@ -240,10 +253,12 @@ a:hover {
     align-items: center;
     justify-content: center;
     font-size: 5em;
+    /* width: 2.1em; */
     background: var(--semi-dark-navy);
-    box-shadow: 0 5px #132128;
+    box-shadow: 0 10px #132128;
     border-radius: 10px;
-    margin: 0.5rem;
+    margin: 0.8rem;
+    cursor: pointer;
 
 }
 

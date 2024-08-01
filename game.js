@@ -1,7 +1,5 @@
-// import {game, choice} from "./main.js";
-import {expObj} from "./main.js";
-
-if (expObj.game == "cpu") {cpuGame(expObj.choice)};
+const choice = localStorage.getItem("choice");
+console.log(`choice = ${choice}`)
 
 function cpuGame(choice) {
     let choiceEl = document.querySelector(choice);
